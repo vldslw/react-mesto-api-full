@@ -21,22 +21,5 @@ module.exports = (req, res, next) => {
 
   req.user = payload;
   next();
-  // const token = req.cookies.jwt;
-
-  // if (!token) {
-  //   next(new AuthError('Необходима авторизация'));
-  //   return;
-  // }
-
-  // let payload;
-
-  // try {
-  //   payload = jwt.verify(token, '');
-  // } catch (err) {
-  //   next(new AuthError('Необходима авторизация'));
-  //   return;
-  // }
-
-  // req.user = payload;
-  // next();
+  
 };
