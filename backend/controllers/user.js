@@ -1,9 +1,9 @@
 const bcrypt = require('bcryptjs');
-const { 
-  NODE_ENV,
-  JWT_SECRET, 
-} = require('../config');
 const jwt = require('jsonwebtoken');
+const {
+  NODE_ENV,
+  JWT_SECRET,
+} = require('../config');
 const User = require('../models/user');
 const {
   OK,
@@ -55,11 +55,7 @@ module.exports.login = (req, res, next) => {
         NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret',
         { expiresIn: '7d' },
       );
-
-      console.log(token);
-
       res.send({ token });
-
     })
     .catch(next);
 };
