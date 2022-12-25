@@ -20,9 +20,8 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const corsOptions = {
   origin: [
     'http://localhost:3000',
-    'http://localhost:3001',
-    'http://mesto-vldslw.nomoredomains.club',
-    'http://api.mesto-vldslw.nomoredomains.club',
+    'https://mesto-vldslw.nomoredomains.club',
+    'https://api.mesto-vldslw.nomoredomains.club',
   ],
   methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
   preflightContinue: false,
