@@ -4,17 +4,8 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const { celebrate, Joi } = require('celebrate');
 const { errors } = require('celebrate');
-const cardRouters = require('./routes/card');
-const userRouters = require('./routes/user');
-const {
-  urlPattern,
-} = require('./constants/constants');
-const {
-  addUser, login,
-} = require('./controllers/user');
-const NotFoundError = require('./errors/not-found-err');
+const routes = require('./routes/index');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const corsOptions = {
@@ -45,33 +36,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(requestLogger);
 
-app.use('/cards', cardRouters);
-app.use('/users', userRouters);
+app.use(routes);
 
 app.get('/crash-test', () => {
   setTimeout(() => {
     throw new Error('Сервер сейчас упадёт');
   }, 0);
-});
-
-app.post('/signin', celebrate({
-  body: Joi.object().keys({
-    email: Joi.string().required().email(),
-    password: Joi.string().required(),
-  }),
-}), login);
-app.post('/signup', celebrate({
-  body: Joi.object().keys({
-    name: Joi.string().min(2).max(30),
-    about: Joi.string().min(2).max(30),
-    avatar: Joi.string().pattern(urlPattern),
-    email: Joi.string().required().email(),
-    password: Joi.string().required(),
-  }),
-}), addUser);
-
-app.use((req, res, next) => {
-  next(new NotFoundError('Страница по указанному маршруту не найдена'));
 });
 
 app.use(errorLogger);
