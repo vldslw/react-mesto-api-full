@@ -22,6 +22,8 @@ const corsOptions = {
     'http://localhost:3000',
     'https://mesto-vldslw.nomoredomains.club',
     'https://api.mesto-vldslw.nomoredomains.club',
+    'http://mesto-vldslw.nomoredomains.club',
+    'http://api.mesto-vldslw.nomoredomains.club',
   ],
   methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
   preflightContinue: false,
