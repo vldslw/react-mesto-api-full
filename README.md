@@ -9,4 +9,4 @@
   
 API размещен на Яндекс.Облаке:
 - IP 51.250.84.187
-- Backend https://api.mesto-vldslw.nomoredomains.club/
+- https://api.mesto-vldslw.nomoredomains.club/
