@@ -7,7 +7,6 @@
 [![My Skills](https://skillicons.dev/icons?i=html,css,js,react,nginx,nodejs,express)](https://skillicons.dev)
 
   
-Cайт размещен на Яндекс.Облаке:
+API размещен на Яндекс.Облаке:
 - IP 51.250.84.187
-- Frontend https://mesto-vldslw.nomoredomains.club/
 - Backend https://api.mesto-vldslw.nomoredomains.club/
