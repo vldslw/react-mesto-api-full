@@ -13,6 +13,14 @@ API размещен на Яндекс.Облаке:
 
 [![My Skills](https://skillicons.dev/icons?i=html,css,js,react,nginx,nodejs,express)](https://skillicons.dev)
 
+В проекте применены технологии HTML, CSS, JS, React, Nginx, Nodejs, Git, Express.js, mongoDB.
+
+## Скрипты
+
+- npm run start - запускает приложение в режиме разработки по адресу [http://localhost:3000](http://localhost:3000)
+
+- npm run build - сборка проекта в папке build
+
 ## Ссылка на сайт
 
 [Mesto](https://vldslw-mesto.vercel.app/)
