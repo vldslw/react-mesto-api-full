@@ -5,6 +5,10 @@ const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const { errors } = require('celebrate');
+const {
+  NODE_ENV,
+  MONGO_DB,
+} = require('./config');
 const routes = require('./routes/index');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
@@ -15,6 +19,10 @@ const corsOptions = {
     'https://api.mesto-vldslw.nomoredomains.club',
     'http://mesto-vldslw.nomoredomains.club',
     'http://api.mesto-vldslw.nomoredomains.club',
+    'http://react-mesto-2a57.onrender.com',
+    'https://react-mesto-2a57.onrender.com',
+    'http://react-mesto-api-nt4r.onrender.com',
+    'https://react-mesto-api-nt4r.onrender.com',
   ],
   methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
   preflightContinue: false,
@@ -23,7 +31,8 @@ const corsOptions = {
   credentials: true,
 };
 
-mongoose.connect('mongodb://127.0.0.1:27017/mestodb');
+mongoose.connect(NODE_ENV === 'production' ? MONGO_DB : 'mongodb://127.0.0.1:27017/mestodb', { useNewUrlParser: true, useUnifiedTopology: true });
+// mongoose.connect('mongodb://127.0.0.1:27017/mestodb');
 
 const { PORT = 3000 } = process.env;
 const app = express();
