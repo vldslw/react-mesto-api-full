@@ -33,6 +33,7 @@ const corsOptions = {
 
 mongoose.connect(NODE_ENV === 'production' ? MONGO_DB : 'mongodb://127.0.0.1:27017/mestodb', { useNewUrlParser: true, useUnifiedTopology: true });
 // mongoose.connect('mongodb://127.0.0.1:27017/mestodb');
+console.log(`Подключение к базе данных по адресу: ${MONGO_DB}`);
 
 const { PORT = 3000 } = process.env;
 const app = express();
