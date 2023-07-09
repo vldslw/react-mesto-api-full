@@ -139,7 +139,7 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'https://api.mesto-vldslw.nomoredomains.club',
+  baseUrl: 'https://react-mesto-api-nt4r.onrender.com',
 });
 
 export default api;

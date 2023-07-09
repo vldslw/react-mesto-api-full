@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://api.mesto-vldslw.nomoredomains.club';
+export const BASE_URL = 'https://react-mesto-api-nt4r.onrender.com';
 
 export const register = (password, email) => {
   return fetch(`${BASE_URL}/signup`, {
